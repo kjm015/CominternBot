@@ -22,8 +22,8 @@ public class DemoApplication {
 	}
 
 	public static void main(String[] args) {
-		System.out.println("App started!");
 		SpringApplication.run(DemoApplication.class, args);
+		log.info("App is running!");
 		demo.handleHello("Hello, World!");
 	}
 }

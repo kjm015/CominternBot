@@ -35,6 +35,6 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-hateoas')
 	compile('org.springframework.boot:spring-boot-starter-web')
 	compileOnly('org.projectlombok:lombok')
-	compile('net.dv8tion:JDA:3.6.0_376')
+	compile 'net.dv8tion:JDA:3.6.0_376'
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
