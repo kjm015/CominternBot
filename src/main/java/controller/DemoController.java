@@ -16,13 +16,19 @@ public class DemoController {
 	@Autowired
 	private DemoManager manager;
 	
-	@GetMapping(path = "/hello", produces = "application/json")
-	@ResponseStatus(HttpStatus.ACCEPTED)
+	@GetMapping(value = "/", produces = "application/json")
+	@ResponseStatus(HttpStatus.OK)
+	public String home() {
+		return "Welcome to my home page!";
+	}
+	
+	@GetMapping(value = "hello", produces = "application/json")
+	@ResponseStatus(HttpStatus.OK)
 	public String helloWorld() {
 		return "Hello";
 	}
 	
-	@PostMapping(path = "/payload", consumes = "application/json")
+	@PostMapping(value = "payload", consumes = "application/json")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void sample(@RequestBody String msg) {
 		manager.handleHello(msg);
