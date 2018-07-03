@@ -33,6 +33,5 @@ public class DemoController {
 	public void sample(@RequestBody String msg) {
 		manager.handleHello(msg);
 	}
-	
 
 }

@@ -1,3 +1,4 @@
+
 buildscript {
 	ext {
 		springBootVersion = '2.0.3.RELEASE'
@@ -18,7 +19,7 @@ apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 
-group = 'com.example'
+group = 'io.github.kjm015'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
 
@@ -37,4 +38,7 @@ dependencies {
 	compileOnly('org.projectlombok:lombok')
 	compile 'net.dv8tion:JDA:3.6.0_376'
 	testCompile('org.springframework.boot:spring-boot-starter-test')
+	compile files("${System.properties['java.home']}/../lib/tools.jar")
+	runtime files(org.gradle.internal.jvm.Jvm.current().toolsJar)
+
 }
