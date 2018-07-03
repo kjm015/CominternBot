@@ -19,6 +19,7 @@ public class DemoController {
 	@GetMapping(value = "/", produces = "application/json")
 	@ResponseStatus(HttpStatus.OK)
 	public String home() {
+		manager.handleHello("Hello");
 		return "Welcome to my home page!";
 	}
 	

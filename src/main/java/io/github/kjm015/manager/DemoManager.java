@@ -15,7 +15,6 @@ public class DemoManager {
 	
 	public void handleHello(String msg) {
 		log.info("Sending message: " + msg);
-		
 		try {
 			demoService.doStuff(msg);
 		} catch (Exception e) {

@@ -39,6 +39,6 @@ dependencies {
 	compile 'net.dv8tion:JDA:3.6.0_376'
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 	compile files("${System.properties['java.home']}/../lib/tools.jar")
-	runtime files(org.gradle.internal.jvm.Jvm.current().toolsJar)
+	// runtime files(org.gradle.internal.jvm.Jvm.current().toolsJar)
 
 }

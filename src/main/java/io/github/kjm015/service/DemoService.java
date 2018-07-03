@@ -26,9 +26,9 @@ public class DemoService {
 	@Autowired
 	private RestTemplate restTemplate;
 	
-	public void doStuff(String fun) throws LoginException, RateLimitedException, InterruptedException {
+	public void doStuff(String fun) throws LoginException, InterruptedException {
 		JDA jda = new JDABuilder(AccountType.BOT).setToken(token).buildBlocking();
-		
+
 		long ping = jda.getPing();
 		
 		restTemplate.postForLocation(webHook, fun + ", and the current ping is now " + ping);
