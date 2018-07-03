@@ -1,8 +1,9 @@
-package service;
+package io.github.kjm015.service;
 
 import javax.security.auth.login.LoginException;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -15,9 +16,12 @@ import net.dv8tion.jda.core.exceptions.RateLimitedException;
 @Service
 @Slf4j
 public class DemoService {
-	
-	private static final String webhook = "https://discordapp.com/api/webhooks/462379781615255582/vgSiT7An59T96vzGWrFv3YZDM482t5pnqEh57ulddfkpg-3SG0k1AKN8KrTKByPzLoRc";
-	private static final String token = "NDYyMzc5MjIxMjUyMzA5MDAy.Dhg_zA.BBosSM7vXXaA5hl3w9DP4jT7AMk";
+
+	@Value("${discord.hook}")
+	private String webHook;
+
+	@Value("${discord.token}")
+	private String token;
 	
 	@Autowired
 	private RestTemplate restTemplate;
@@ -27,7 +31,7 @@ public class DemoService {
 		
 		long ping = jda.getPing();
 		
-		restTemplate.postForLocation(webhook, fun + ", and the current ping is now " + ping);
+		restTemplate.postForLocation(webHook, fun + ", and the current ping is now " + ping);
 		log.info("posted to Discord");
 	}
 

@@ -1,4 +1,4 @@
-package controller;
+package io.github.kjm015.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import manager.DemoManager;
+import io.github.kjm015.manager.DemoManager;
 
 @RestController
 public class DemoController {

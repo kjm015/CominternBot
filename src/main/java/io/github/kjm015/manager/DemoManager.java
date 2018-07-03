@@ -1,10 +1,10 @@
-package manager;
+package io.github.kjm015.manager;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import lombok.extern.slf4j.Slf4j;
-import service.DemoService;
+import io.github.kjm015.service.DemoService;
 
 @Component
 @Slf4j
