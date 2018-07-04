@@ -11,7 +11,7 @@ import io.github.kjm015.service.DemoService;
 public class DemoManager {
 	
 	@Autowired
-	DemoService demoService;
+	private DemoService demoService;
 	
 	public void handleHello(String msg) {
 		log.info("Sending message: " + msg);

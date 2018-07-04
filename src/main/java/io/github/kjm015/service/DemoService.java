@@ -25,11 +25,14 @@ public class DemoService {
 	
 	@Autowired
 	private RestTemplate restTemplate;
-	
-	public void doStuff(String fun) throws LoginException, InterruptedException {
-		JDA jda = new JDABuilder(AccountType.BOT).setToken(token).buildBlocking();
 
+	@Autowired
+	private JDA jda;
+	
+	public void doStuff(String fun) /* throws LoginException, InterruptedException */ {
 		long ping = jda.getPing();
+
+		log.info("ping is " + ping);
 		
 		restTemplate.postForLocation(webHook, fun + ", and the current ping is now " + ping);
 		log.info("posted to Discord");
